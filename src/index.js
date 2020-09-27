@@ -17,7 +17,7 @@ class App extends React.Component {
         );
     }
 
-    render() {
+    renderContent() {
         if(this.state.errorMessage && !this.state.lat) {
             return <div> { this.state.errorMessage } </div>
         }
@@ -27,6 +27,14 @@ class App extends React.Component {
         }
 
         return <div><i class="notched circle loading icon"></i></div>
+    }
+
+    render() {
+        return(
+            <div className="border red">
+                { this.renderContent() }
+            </div>
+        )
     }
 }
 
